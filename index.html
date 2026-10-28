@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sevgilim… ❤️</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Caveat & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0b0314;
+            color: #fce7f3;
+            overflow-x: hidden;
+            touch-action: manipulation;
+        }
+
+        .font-romantic {
+            font-family: 'Caveat', cursive;
+        }
+
+        /* Animated Mobile Gradient Background */
+        .bg-mobile-gradient {
+            background: linear-gradient(160deg, #180528 0%, #0b0314 40%, #200418 80%, #0b0314 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 12s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* Glassmorphism Container for Mobile Screen */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(244, 114, 182, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Floating background heart particles */
+        .bg-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1;
+            animation: floatUpMobile 7s linear infinite;
+        }
+
+        @keyframes floatUpMobile {
+            0% {
+                transform: translateY(100vh) scale(0.6) rotate(0deg);
+                opacity: 0;
+            }
+            20% { opacity: 0.6; }
+            80% { opacity: 0.6; }
+            100% {
+                transform: translateY(-20vh) scale(1.1) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Touch effect heart explosion */
+        .touch-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 99;
+            animation: touchBurst 1s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+        }
+
+        @keyframes touchBurst {
+            0% {
+                transform: translate(-50%, -50%) scale(0.4) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.4) rotate(var(--rot));
+                opacity: 0;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(244, 114, 182, 0.3);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-mobile-gradient min-h-screen relative flex flex-col justify-between pb-28">
+
+    <!-- Ambient Floating Background Particles -->
+    <div id="ambientHearts" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- Header / Top Bar -->
+    <header class="w-full pt-8 pb-4 text-center z-10 px-4">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/10 border border-rose-500/30 mb-2 shadow-lg shadow-rose-950/50 animate-bounce">
+            <span class="text-2xl">💖</span>
+        </div>
+        <h1 class="font-romantic text-4xl sm:text-5xl text-rose-300 drop-shadow-md">Sana Özel Bir Mesaj</h1>
+        <p class="text-[11px] uppercase tracking-widest text-rose-300/60 font-medium">Sadece Sen Ve Ben</p>
+    </header>
+
+    <!-- Main Letter Content Container -->
+    <main class="w-full max-w-md mx-auto px-4 z-10 my-auto">
+        
+        <article class="glass-card rounded-3xl p-5 sm:p-7 relative overflow-hidden">
+            
+            <!-- Opening Line / Header -->
+            <div class="border-b border-rose-500/20 pb-4 mb-5">
+                <h2 class="font-romantic text-3xl text-rose-300 font-bold flex items-center gap-2">
+                    Sevgilim… <span class="text-2xl animate-pulse">❤️🥹</span>
+                </h2>
+            </div>
+
+            <!-- Paragraphs -->
+            <div class="space-y-4 text-sm sm:text-base leading-[1.8] font-light text-pink-100/90">
+                
+                <p>
+                    Şu an yanında olmayı sana sarılmayı başımı göğsüne koyup hiçbir şey düşünmeden öylece kalmayı o kadar çok istiyorum ki Bazen aramızdaki mesafeye kızıyorum Çünkü insan en çok yanında olmak istediği kişiye sarılamayınca anlıyor bazı şeylerin ne kadar zor olduğunu
+                </p>
+
+                <p>
+                    Ama biliyor musun Sen yanımda olmasan da günümün içindesin. Aklıma gelen güzel bir şeyde seni düşünüyorum bir şarkı duyunca aklıma sen geliyorsun, başıma bir şey geldiğinde ilk sana anlatmak istiyorum Sanki hayatımın her köşesinde senden bir parça var 🥹❤️
+                </p>
+
+                <p>
+                    Keşke şu an telefonun ekranından çıkıp karşına gelebilsem Hiçbir şey söylemeden sana sımsıkı sarılsam Sonra yüzüne bakıp <span class="text-rose-300 font-normal italic">“İşte, ben en çok burada olmak istiyorum”</span> desem Yanında Seninle
+                </p>
+
+                <p>
+                    Sana her zaman mükemmel davranamayabilirim bazen kendimi anlatamayabilirim ama bilmeni istediğim bir şey var Sen benim için sıradan biri değilsin Varlığın sesin gülüşün hatta bazen küçücük bir mesajın bile benim için çok şey ifade ediyor ❤️
+                </p>
+
+                <p>
+                    Ben sadece güzel günlerinde yanında olmak istemiyorum Yorulduğunda canın sıkkın olduğunda hiçbir şey anlatmak istemediğinde de yanında olmak istiyorum Her şey yolundayken de değilken de elini tutan kişi olmak istiyorum
+                </p>
+
+                <p>
+                    Belki şu an sana sarılamıyorum ama kalbimden geçenleri bir mesajla da olsa sana ulaştırmak istedim Çünkü bazen insan sevdiği kişiye onu ne kadar çok sevdiğini söylemeyi erteliyor Ben ertelemek istemedim
+                </p>
+
+                <p>
+                    İyi ki hayatımdasın sevgilim İyi ki yollarımız kesişmiş Seni özlemek zor olsa da seni seviyor olmak da bir yandan çok güzel Ve bir gün bu mesajları okuyup özlemek yerine birbirimize sarılacağımız günü düşünmek bana mutluluk veriyor 🫂❤️
+                </p>
+
+                <p class="pt-2 font-medium text-rose-300/90 text-xs uppercase tracking-wider">
+                    Şimdi yanımda olsaydın sana tek bir şey söylerdim
+                </p>
+
+                <!-- Highlighted Quote Card -->
+                <div class="my-4 p-4 rounded-2xl bg-gradient-to-br from-rose-950/60 to-purple-950/60 border border-rose-500/30 text-center shadow-inner relative">
+                    <i class="fa-solid fa-quote-left absolute top-2 left-3 text-rose-500/20 text-xl"></i>
+                    <p class="font-romantic text-xl text-rose-200 italic font-semibold leading-relaxed">
+                        “Biraz daha sarıl bana çünkü ben senin yanında dünyanın geri kalanını unutuyorum” ❤️‍fält
+                    </p>
+                </div>
+
+                <p class="font-medium text-rose-200 text-sm sm:text-base pt-2 border-t border-rose-500/15">
+                    Seni çok seviyorum Hem de şu an bu mesajı okurken tahmin ettiğinden çok daha fazla Cemremm benimmm ❤️‍🔥
+                </p>
+
+            </div>
+
+            <!-- Copy Text Helper Button -->
+            <div class="mt-6 pt-4 border-t border-rose-500/20 text-center">
+                <button onclick="copyToClipboard()" id="copyBtn" class="w-full py-2.5 px-4 rounded-xl bg-rose-500/10 active:bg-rose-500/30 border border-rose-500/30 text-rose-200 text-xs font-medium flex items-center justify-center gap-2 transition-all">
+                    <i class="fa-regular fa-copy text-sm"></i>
+                    <span id="copyBtnText">Bu Notu Metin OlaraK Kopyala</span>
+                </button>
+            </div>
+
+        </article>
+
+    </main>
+
+    <!-- Mobile Fixed Bottom Action Bar -->
+    <div class="fixed bottom-0 left-0 right-0 p-4 z-40 bg-gradient-to-t from-[#0b0314] via-[#0b0314]/90 to-transparent backdrop-blur-md">
+        <div class="max-w-md mx-auto">
+            <button id="hugBtn" onclick="handleHugClick(event)" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-rose-600 via-pink-600 to-rose-500 text-white font-semibold text-base sm:text-lg shadow-lg shadow-rose-600/40 active:scale-95 transition-transform flex items-center justify-center gap-3 border border-rose-400/30">
+                <span class="text-xl">🫂</span>
+                <span>Sana Sımsıkı Sarıl</span>
+                <span class="text-xl">❤️</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hug Popup Modal / Toast -->
+    <div id="hugModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="glass-card bg-rose-950/90 rounded-3xl p-6 text-center max-w-xs w-full border border-rose-400/40 shadow-2xl transform scale-90 transition-transform duration-300" id="modalCard">
+            <div class="text-5xl mb-3 animate-bounce">🫂✨</div>
+            <h3 class="font-romantic text-3xl text-rose-300 font-bold mb-2">Sımsıkı Sarıldım!</h3>
+            <p class="text-xs sm:text-sm text-pink-100/90 leading-relaxed font-light mb-5">
+                Sana sımsıkı sarıldım sevgilim! Kalbim her an seninle... ❤️
+            </p>
+            <button onclick="closeModal()" class="w-full py-2.5 bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold rounded-xl shadow-md">
+                Kapat ❤️
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Exact text for copying
+        const fullText = `Sevgilim… ❤️🥹
+Şu an yanında olmayı, sana sarılmayı, başımı göğsüne koyup hiçbir şey düşünmeden öylece kalmayı o kadar çok istiyorum ki… Bazen aramızdaki mesafeye kızıyorum. Çünkü insan en çok yanında olmak istediği kişiye sarılamayınca anlıyor bazı şeylerin ne kadar zor olduğunu.
+Ama biliyor musun? Sen yanımda olmasan da günümün içindesin. Aklıma gelen güzel bir şeyde seni düşünüyorum, bir şarkı duyunca aklıma sen geliyorsun, başıma bir şey geldiğinde ilk sana anlatmak istiyorum. Sanki hayatımın her köşesinde senden bir parça var. 🥹❤️
+Keşke şu an telefonun ekranından çıkıp karşına gelebilsem. Hiçbir şey söylemeden sana sımsıkı sarılsam. Sonra yüzüne bakıp “İşte, ben en çok burada olmak istiyorum” desem… Yanında. Seninle.
+Sana her zaman mükemmel davranamayabilirim, bazen kendimi anlatamayabilirim ama bilmeni istediğim bir şey var: Sen benim için sıradan biri değilsin. Varlığın, sesin, gülüşün, hatta bazen küçücük bir mesajın bile benim için çok şey ifade ediyor. ❤️
+Ben sadece güzel günlerinde yanında olmak istemiyorum. Yorulduğunda, canın sıkkın olduğunda, hiçbir şey anlatmak istemediğinde de yanında olmak istiyorum. Her şey yolundayken de, değilken de elini tutan kişi olmak istiyorum.
+Belki şu an sana sarılamıyorum ama kalbimden geçenleri bir mesajla da olsa sana ulaştırmak istedim. Çünkü bazen insan sevdiği kişiye onu ne kadar çok sevdiğini söylemeyi erteliyor. Ben ertelemek istemedim.
+İyi ki hayatımdasın sevgilim. İyi ki yollarımız kesişmiş. Seni özlemek zor olsa da seni seviyor olmak çok güzel. Ve bir gün bu mesajları okuyup özlemek yerine birbirimize sarılacağımız günü düşünmek bana umut veriyor. 🫂❤️
+Şimdi yanımda olsaydın sana tek bir şey söylerdim:
+“Biraz daha sarıl bana, çünkü ben senin yanında dünyanın geri kalanını unutuyorum.” ❤️‍fält
+Seni çok seviyorum. Hem de şu an bu mesajı okurken tahmin ettiğinden çok daha fazla. ❤️‍🔥`;
+
+        // Floating ambient background hearts
+        function initAmbientHearts() {
+            const container = document.getElementById('ambientHearts');
+            const emojis = ['❤️', '💖', '💕', '✨', '🥹', '💗'];
+
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'bg-heart';
+                heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+                heart.style.fontSize = (Math.random() * 12 + 12) + 'px';
+                
+                container.appendChild(heart);
+
+                setTimeout(() => heart.remove(), 8000);
+            }, 700);
+        }
+
+        // Tap screen interaction: spawn hearts on touch / click anywhere
+        document.addEventListener('pointerdown', (e) => {
+            // Avoid creating touch hearts when clicking buttons directly to keep layout clean
+            if (e.target.closest('button')) return;
+
+            spawnHeartsAt(e.clientX, e.clientY, 4);
+        });
+
+        // Spawn burst of hearts at x, y
+        function spawnHeartsAt(x, y, count = 15) {
+            const emojis = ['❤️', '💖', '💕', '🫂', '✨', '💗', '🥰'];
+
+            for (let i = 0; i < count; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'touch-heart';
+                heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                
+                const angle = Math.random() * Math.PI * 2;
+                const dist = Math.random() * 120 + 40;
+                const tx = Math.cos(angle) * dist + 'px';
+                const ty = Math.sin(angle) * dist + 'px';
+                const rot = (Math.random() * 360) + 'deg';
+
+                heart.style.left = x + 'px';
+                heart.style.top = y + 'px';
+                heart.style.setProperty('--tx', tx);
+                heart.style.setProperty('--ty', ty);
+                heart.style.setProperty('--rot', rot);
+                heart.style.fontSize = (Math.random() * 14 + 14) + 'px';
+
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 1000);
+            }
+        }
+
+        // Handle Hug Button Click
+        function handleHugClick(e) {
+            const rect = e.target.getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = rect.top + rect.height / 2;
+
+            spawnHeartsAt(x, y, 25);
+            showModal();
+        }
+
+        // Show Modal Popup
+        function showModal() {
+            const modal = document.getElementById('hugModal');
+            const card = document.getElementById('modalCard');
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                card.classList.remove('scale-90');
+                card.classList.add('scale-100');
+            }, 10);
+        }
+
+        // Close Modal Popup
+        function closeModal() {
+            const modal = document.getElementById('hugModal');
+            const card = document.getElementById('modalCard');
+            
+            modal.classList.add('opacity-0');
+            card.classList.remove('scale-100');
+            card.classList.add('scale-90');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Copy Text Helper function using execCommand for iframe compatibility
+        function copyToClipboard() {
+            const el = document.createElement('textarea');
+            el.value = fullText;
+            document.body.appendChild(el);
+            el.select();
+            
+            try {
+                document.execCommand('copy');
+                const btnText = document.getElementById('copyBtnText');
+                btnText.innerText = "Kopyalandı! ❤️";
+                setTimeout(() => {
+                    btnText.innerText = "Bu Notu Metin OlaraK Kopyala";
+                }, 3000);
+            } catch (err) {
+                console.error("Kopyalanamadı", err);
+            }
+            
+            document.body.removeChild(el);
+        }
+
+        window.onload = function() {
+            initAmbientHearts();
+        };
+    </script>
+</body>
+</html>
